@@ -249,6 +249,7 @@ def Hive_weight_reporting():
     hive3_weight = history['Reports'][-1]['Hive_3']['Weight']
 
     report = "Bee Hive Weight Report: \n Hive 1 ={0:.2f}kg \n Hive 2 ={1:.2f}kg \n Hive 3 ={2:.2f}kg \n Date & Time:{3}".format(hive1_weight,hive2_weight,hive3_weight,datetime.datetime.now())
+    client.publish(topic["alerts"],report)
     gsm.sendSMS(report)
 
 
