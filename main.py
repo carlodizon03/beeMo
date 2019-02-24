@@ -9,11 +9,12 @@ import sys
 dht_sensors = [4,17,27,22,10,9,11]
 
 dht = DHT.DHT_SENSOR(dht_sensors)
-calibrationFile = open("LoadCell_Calibration_Ratio.txt","r")
-calibrationRatioList = calibrationFile.read().split(',')
-cell1 = loadCell.Create(24,23,float(calibrationRatioList[0]))
-cell2 = loadCell.Create(8,25,float(calibrationRatioList[1]))
-cell3 = loadCell.Create(6,5,float(calibrationRatioList[2]))
+with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json') as f:
+                ratio = json.load(f)
+                
+cell1 = loadCell.Create(24,23,float(ratio["Ratio1"]))
+cell2 = loadCell.Create(8,25,float(ratio["Ratio2"]))
+cell3 = loadCell.Create(6,5,float(ratio["Ratio3"]))
 
 
 
