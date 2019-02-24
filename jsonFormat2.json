@@ -1,0 +1,15 @@
+{
+  
+  
+  "Reports" :[ 
+              [
+               { "Hive_1": {"Temperatures": [], "Humidities":[] , "Weight": 1 }},
+               { "Hive_2":{ "Temperatures": [], "Humidities":[] , "Weight": 1 }},
+               { "Hive_3":{ "Temperatures": [], "Humidities":[] , "Weight": 1 }},
+               { "Outside":{ "Temperature": [], "Humidity":[] }},
+               { "Timestamp": ""}  
+              ]
+            ] 
+  
+  
+}

@@ -1,0 +1,40 @@
+{
+    "Hive_1": {
+        "Humidities": [
+            50.79,
+            52.00
+        ],
+        "Temperatures": [
+            27.29,
+            28.00
+        ],
+        "Weight": 12.34
+    },
+    "Hive_2": {
+        "Humidities": [
+            55.00,
+            58.90
+        ],
+        "Temperatures": [
+            27.89,
+            27.60
+        ],
+        "Weight": 55.60
+    },
+    "Hive_3": {
+        "Humidities": [
+            56.590,
+            34.73
+        ],
+        "Temperatures": [
+            27.70,
+            23.34
+        ],
+        "Weight": 34.33
+    },
+    "Outside": {
+        "Humidity": 51.90,
+        "Temperature": 27.89
+    },
+    "Timestamp": "2019-01-27 22:24:07.699667"
+}
