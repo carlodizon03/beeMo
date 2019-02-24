@@ -164,15 +164,22 @@ def healthCheck():
         history = json.load(f)
 
     Temp_Anomaly = []
+    Humid_Anomaly = []
     
     Max_Temp = params['Parameters']['Max_Temp']
     Min_Temp = params['Parameters']['Min_Temp']
+    Max_Humid= params['Parameters']['Max_Humid']
+    Min_Humid = params['Parameters']['Min_Humid']
     Harvest_Weight = params['Parameters']['Harvest_Weight']
    
     hive1_temp = history['Reports'][-1]['Hive_1']['Temperatures']
     hive2_temp = history['Reports'][-1]['Hive_2']['Temperatures']
     hive3_temp = history['Reports'][-1]['Hive_3']['Temperatures']
 
+    hive1_humid = history['Reports'][-1]['Hive_1']['Humidities']
+    hive2_humid = history['Reports'][-1]['Hive_2']['Humidities']
+    hive3_humid = history['Reports'][-1]['Hive_3']['Humidities']
+    
     hive1_weight = history['Reports'][-1]['Hive_1']['Weight']
     hive2_weight = history['Reports'][-1]['Hive_2']['Weight']
     hive3_weight = history['Reports'][-1]['Hive_3']['Weight']
@@ -198,13 +205,41 @@ def healthCheck():
         if(hive3_temp[index] < Min_Temp):
             Temp_Anomaly.append("ALERT!!\nHive 3 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_temp[index],Min_Temp,datetime.datetime.now()))
   
+   
+         
+
+    
+    #Hive 1 humid Humid_Anomaly Max_Humid Min_Humid
+    for index in range(len(hive1_humid)):
+        if(hive1_humid[index] > Max_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_humid[index],Max_Humid,datetime.datetime.now()))
+        if(hive1_humid[index] < Min_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_humid[index],Min_Temp,datetime.datetime.now()))
+    #Hive 2 humid Humid_Anomaly Max_Humid Min_Humid
+    for index in range(len(hive2_humid)):
+        if(hive2_humid[index] > Max_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_humid[index],Max_Humid,datetime.datetime.now()))
+        if(hive2_humid[index] < Min_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_humid[index],Min_Temp,datetime.datetime.now()))
+    #Hive 3 humid Humid_Anomaly Max_Humid Min_Humid
+    for index in range(len(hive3_humid)):
+        if(hive3_humid[index] > Max_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 3 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_humid[index],Max_Humid,datetime.datetime.now()))
+        if(hive3_humid[index] < Min_Humid):
+            Humid_Anomaly.append("ALERT!!\nHive 3 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_humid[index],Min_Temp,datetime.datetime.now()))
+
     if Temp_Anomaly:
         print("Anomalies:"+str(len(Temp_Anomaly)))
         for anomaly in range(len(Temp_Anomaly)):
-            
             gsm.sendSMS(Temp_Anomaly[anomaly])
             client.publish(topic["alerts"],Temp_Anomaly[anomaly])
-         
+            
+    if Humid_Anomaly:
+        print("Anomalies:"+str(len(Humid_Anomaly)))
+        for anomaly in range(len(Humid_Anomaly)):
+            gsm.sendSMS(Humid_Anomaly[anomaly])
+            client.publish(topic["alerts"],Humid_Anomaly[anomaly])
+            
     
 def Hive_weight_reporting():
     with open(directory["history"],'r') as f:

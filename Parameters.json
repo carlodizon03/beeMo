@@ -1,8 +1,8 @@
 {
     "Parameters": {
-        "Harvest_Weight": 8,
-        "Max_Temp": 25,
-        "Min_Temp": 2,
+        "Harvest_Weight": 1,
+        "Max_Temp": 39,
+        "Min_Temp": 37,
         "Notif_Status": true,
         "Time_Span": 5
     }
