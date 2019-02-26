@@ -18,7 +18,7 @@ cell3 = loadCell.Create(6,5,float(ratio["Ratio3"]))
 
 
 
-try:
+	try:
     
     while True:
         

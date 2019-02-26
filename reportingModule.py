@@ -166,19 +166,34 @@ def healthCheck():
     Temp_Anomaly = []
     Humid_Anomaly = []
     
-    Max_Temp = params['Parameters']['Max_Temp']
-    Min_Temp = params['Parameters']['Min_Temp']
-    Max_Humid= params['Parameters']['Max_Humid']
-    Min_Humid = params['Parameters']['Min_Humid']
+    Max_Temp_layer1 = params['Parameters']['Max_Temp']
+    Max_Temp_layer2 = params['Parameters']['Max_Temp2']
+    Min_Temp_layer1 = params['Parameters']['Min_Temp']
+    Min_Temp_layer2 = params['Parameters']['Min_Temp2']
+    Max_Humid_layer1 = params['Parameters']['Max_Humid']
+    Max_Humid_layer2 = params['Parameters']['Max_Humid2']
+    Min_Humid_layer1 = params['Parameters']['Min_Humid']
+    Min_Humid_layer2 = params['Parameters']['Min_Humid2']
     Harvest_Weight = params['Parameters']['Harvest_Weight']
    
-    hive1_temp = history['Reports'][-1]['Hive_1']['Temperatures']
-    hive2_temp = history['Reports'][-1]['Hive_2']['Temperatures']
-    hive3_temp = history['Reports'][-1]['Hive_3']['Temperatures']
+    hive1_layer1_temp = history['Reports'][-1]['Hive_1']['Temperatures'][0]
+    hive1_layer2_temp = history['Reports'][-1]['Hive_1']['Temperatures'][1]
+    
+    hive2_layer1_temp = history['Reports'][-1]['Hive_2']['Temperatures'][0]
+    hive2_layer2_temp = history['Reports'][-1]['Hive_2']['Temperatures'][1]
 
-    hive1_humid = history['Reports'][-1]['Hive_1']['Humidities']
-    hive2_humid = history['Reports'][-1]['Hive_2']['Humidities']
-    hive3_humid = history['Reports'][-1]['Hive_3']['Humidities']
+    hive3_layer1_temp = history['Reports'][-1]['Hive_3']['Temperatures'][0]
+    hive3_layer2_temp = history['Reports'][-1]['Hive_3']['Temperatures'][1]
+
+
+    hive1_layer1_humid = history['Reports'][-1]['Hive_1']['Humidities'][0]
+    hive1_layer2_humid = history['Reports'][-1]['Hive_1']['Humidities'][1]
+
+    hive2_layer1_humid = history['Reports'][-1]['Hive_2']['Humidities'][0]
+    hive2_layer2_humid = history['Reports'][-1]['Hive_2']['Humidities'][1]
+        
+    hive3_layer1_humid = history['Reports'][-1]['Hive_3']['Humidities'][0]
+    hive3_layer2_humid = history['Reports'][-1]['Hive_3']['Humidities'][1]
     
     hive1_weight = history['Reports'][-1]['Hive_1']['Weight']
     hive2_weight = history['Reports'][-1]['Hive_2']['Weight']
@@ -186,47 +201,76 @@ def healthCheck():
     
     
 
-    #Hive 1 temp Temp_Anomaly
-    for index in range(len(hive1_temp)):
-        if(hive1_temp[index] > Max_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_temp[index],Max_Temp,datetime.datetime.now()))
-        if(hive1_temp[index] < Min_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_temp[index],Min_Temp,datetime.datetime.now()))
-    #Hive 2 temp Temp_Anomaly
-    for index in range(len(hive2_temp)):
-        if(hive2_temp[index] > Max_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_temp[index],Max_Temp,datetime.datetime.now()))
-        if(hive2_temp[index] < Min_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_temp[index],Min_Temp,datetime.datetime.now()))
-    #Hive 3 temp Temp_Anomaly
-    for index in range(len(hive3_temp)):
-        if(hive3_temp[index] > Max_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 3 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_temp[index],Max_Temp,datetime.datetime.now()))
-        if(hive3_temp[index] < Min_Temp):
-            Temp_Anomaly.append("ALERT!!\nHive 3 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_temp[index],Min_Temp,datetime.datetime.now()))
-  
-   
-         
-
+    #Hive 1 layer1 temp Temp_Anomaly
+    if(hive1_layer1_temp > Max_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 1 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_layer1_temp,Max_Temp_layer1,datetime.datetime.now()))
+    elif(hive1_layer1_temp < Min_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 1 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_layer1_temp,Min_Temp_layer1,datetime.datetime.now()))
+    #Hive 1 layer2 temp Temp_Anomaly
+    if(hive1_layer2_temp > Max_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 1 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_layer2_temp,Max_Temp_layer2,datetime.datetime.now()))
+    elif(hive1_layer2_temp < Min_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 1 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive1_layer2_temp,Min_Temp_layer2,datetime.datetime.now()))
     
-    #Hive 1 humid Humid_Anomaly Max_Humid Min_Humid
-    for index in range(len(hive1_humid)):
-        if(hive1_humid[index] > Max_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_humid[index],Max_Humid,datetime.datetime.now()))
-        if(hive1_humid[index] < Min_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_humid[index],Min_Temp,datetime.datetime.now()))
-    #Hive 2 humid Humid_Anomaly Max_Humid Min_Humid
-    for index in range(len(hive2_humid)):
-        if(hive2_humid[index] > Max_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_humid[index],Max_Humid,datetime.datetime.now()))
-        if(hive2_humid[index] < Min_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_humid[index],Min_Temp,datetime.datetime.now()))
-    #Hive 3 humid Humid_Anomaly Max_Humid Min_Humid
-    for index in range(len(hive3_humid)):
-        if(hive3_humid[index] > Max_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 3 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_humid[index],Max_Humid,datetime.datetime.now()))
-        if(hive3_humid[index] < Min_Humid):
-            Humid_Anomaly.append("ALERT!!\nHive 3 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_humid[index],Min_Temp,datetime.datetime.now()))
+    #Hive 2 layer1 temp Temp_Anomaly
+    if(hive2_layer1_temp > Max_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 2 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_layer1_temp,Max_Temp_layer1,datetime.datetime.now()))
+    elif(hive2_layer1_temp < Min_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 2 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_layer1_temp,Min_Temp_layer1,datetime.datetime.now()))
+    #Hive 2 layer2 temp Temp_Anomaly
+    if(hive2_layer2_temp > Max_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 2 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_layer2_temp,Max_Temp_layer2,datetime.datetime.now()))
+    elif(hive2_layer2_temp < Min_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 2 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive2_layer2_temp,Min_Temp_layer2,datetime.datetime.now()))
+   
+
+    #Hive 3 layer1 temp Temp_Anomaly
+    if(hive3_layer1_temp > Max_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 3 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_layer1_temp,Max_Temp_layer1,datetime.datetime.now()))
+    elif(hive2_layer1_temp < Min_Temp_layer1):
+        Temp_Anomaly.append("ALERT!!\nHive 3 Layer 1 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_layer1_temp,Min_Temp_layer1,datetime.datetime.now()))
+    #Hive 2 layer2 temp Temp_Anomaly
+    if(hive3_layer2_temp > Max_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 3 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MAXIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_layer2_temp,Max_Temp_layer2,datetime.datetime.now()))
+    elif(hive3_layer2_temp < Min_Temp_layer2):
+        Temp_Anomaly.append("ALERT!!\nHive 3 Layer 2 temperature is at {0:.2f}C, which exceeds {1:.2f}C MINIMUM temperature set in the app.\nDate&Time: {2}".format(hive3_layer2_temp,Min_Temp_layer2,datetime.datetime.now()))
+
+
+
+    #Hive 1 layer1 humid 
+    if(hive1_layer1_humid > Max_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 1 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_layer1_humid,Max_Humid_layer1,datetime.datetime.now()))
+    elif(hive1_layer1_humid < Min_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 1 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_layer1_humid,Min_Humid_layer1,datetime.datetime.now()))
+    #Hive 1 layer2 humid 
+    if(hive1_layer2_humid > Max_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 1 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_layer2_humid,Max_Humid_layer2,datetime.datetime.now()))
+    elif(hive1_layer2_humid < Min_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 1 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive1_layer2_humid,Min_Humid_layer2,datetime.datetime.now()))
+    
+     #Hive 2 layer1 humid 
+    if(hive2_layer1_humid > Max_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 2 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_layer1_humid,Max_Humid_layer1,datetime.datetime.now()))
+    elif(hive2_layer1_humid < Min_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 2 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_layer1_humid,Min_Humid_layer1,datetime.datetime.now()))
+    #Hive 2 layer2 humid 
+    if(hive2_layer2_humid > Max_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 2 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_layer2_humid,Max_Humid_layer2,datetime.datetime.now()))
+    elif(hive2_layer2_humid < Min_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 2 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive2_layer2_humid,Min_Humid_layer2,datetime.datetime.now()))
+    
+     #Hive 3 layer1 humid 
+    if(hive3_layer1_humid > Max_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 3 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_layer1_humid,Max_Humid_layer1,datetime.datetime.now()))
+    elif(hive3_layer1_humid < Min_Humid_layer1):
+        Humid_Anomaly.append("ALERT!!\nHive 3 Layer 1 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_layer1_humid,Min_Humid_layer1,datetime.datetime.now()))
+    #Hive 3 layer2 humid 
+    if(hive3_layer2_humid > Max_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 3 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MAXIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_layer2_humid,Max_Humid_layer2,datetime.datetime.now()))
+    elif(hive3_layer2_humid < Min_Humid_layer2):
+        Humid_Anomaly.append("ALERT!!\nHive 3 Layer 2 humidity is at {0:.2f}%, which exceeds {1:.2f}% MINIMUM humidity set in the app.\nDate&Time: {2}".format(hive3_layer2_humid,Min_Humid_layer2,datetime.datetime.now()))
+    
+    
 
     if Temp_Anomaly:
         print("Anomalies:"+str(len(Temp_Anomaly)))
