@@ -33,3 +33,23 @@
   10) copy and paste the file in the boot partition.
   11) remove SD Card from PC and plug it back to the Raspberry Pi.
   12) Check if it is successfully connected by viewing in the monitor or by scanning the IP address within the same network using "Advanced IP Scanner" Software (download from google)
+
+
+## Pin COnfiguration
+
+DHT Hive 1 Layer 1  -  GPIO 4
+DHT Hive 1 Layer 2  -  GPIO 17
+DHT Hive 2 Layer 1  -  GPIO 27
+DHT Hive 2 Layer 2  -  GPIO 22
+DHT Hive 3 Layer 1  -  GPIO 10
+DHT Hive 3 Layer 2  -  GPIO 9
+DHT Outsude   -  GPIO 11
+
+Load Cell Hive 1 - Dout:24, Sck:23
+Load Cell Hive 2 - Dout:8, Sck:25
+Load Cell Hive 3 - Dout:6, Sck:5
+
+GSM - RX:GPIO14, TX:GPIO15
+
+LCD - SCL:GPIO3, SDA:GPIO2
+
