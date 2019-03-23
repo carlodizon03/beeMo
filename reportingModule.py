@@ -47,7 +47,7 @@ def scheduler():
     else:
         schedule.every().day.at("08:00").do(Hive_weight_reporting)
     schedule.every(2).hours.do(healthCheck)
-    schedule.every(10).seconds.do(reportLog)
+    schedule.every(1).seconds.do(reportLog)
     schedule.every().day.at("08:00").do(reportHistory)
     print()
     print(schedule.jobs)
@@ -296,7 +296,7 @@ def Hive_weight_reporting():
     client.publish(topic["alerts"],report)
     gsm.sendSMS(report)
 
-
+scheduler()
 
 while True:
     
