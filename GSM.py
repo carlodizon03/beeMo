@@ -52,5 +52,5 @@ def receiveSMS():
         time.sleep(.500)
         ser.read(ser.inWaiting())
         time.sleep(.500)
-
+sendSMS("hello")
 

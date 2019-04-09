@@ -4,7 +4,7 @@ import json
 
 cell1 = loadCell.Create(24,23,None)
 cell2 = loadCell.Create(8,25,None)
-cell3 = loadCell.Create(6,5,None)
+cell3 = loadCell.Create(7,1,None)
 
 with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json') as f:
                 data = json.load(f)
@@ -27,4 +27,8 @@ with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json','w') as o
 
 
 print("Calibration values are successfuly saved to LoadCell_Calibration_Ratio.txt .")
+
+while True:
+
+    print("cell1:{0}\t cell2:{1}\t cell3: {2}".format(cell1.Measure(),cell2.Measure(),cell3.Measure()))
 

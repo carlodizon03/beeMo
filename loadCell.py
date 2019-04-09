@@ -63,7 +63,7 @@ class Create:
             else:
                 raise ValueError('Cannot calculate mean value. Try debug mode. Variable reading:', __reading)
         finally:
-            GPIO.cleanup()
+           # GPIO.cleanup()
             return __ratio
     def Measure(self):
      
