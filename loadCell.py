@@ -11,7 +11,7 @@ class Create:
     def __init__(self, dout_pin, sck_pin, ratio):
         self.__dout_pin = dout_pin
         self.__sck_pin = sck_pin
-       
+        
         if ratio is not None:
              self.__ratio = ratio
              GPIO.setmode(GPIO.BCM)
@@ -73,4 +73,4 @@ class Create:
             return __value/1000
          
        
-       
+

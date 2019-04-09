@@ -12,10 +12,10 @@ dht = DHT.DHT_SENSOR(dht_sensors)
 with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json') as f:
                 ratio = json.load(f)
                 
-cell1 = loadCell.Create(24,23,float(ratio["Ratio1"]))
-cell2 = loadCell.Create(8,25,float(ratio["Ratio2"]))
-cell3 = loadCell.Create(6,5,float(ratio["Ratio3"]))
 
+cell1 = loadCell.Create(23,24,float(ratio["Ratio1"]))
+cell2 = loadCell.Create(8,25,loat(ratio["Ratio2"]))
+cell3 = loadCell.Create(1,7,float(ratio["Ratio3"]))
 
 
 try:
