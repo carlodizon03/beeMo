@@ -14,7 +14,7 @@ with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json') as f:
                 
 
 cell1 = loadCell.Create(23,24,float(ratio["Ratio1"]))
-cell2 = loadCell.Create(8,25,loat(ratio["Ratio2"]))
+cell2 = loadCell.Create(8,25,float(ratio["Ratio2"]))
 cell3 = loadCell.Create(1,7,float(ratio["Ratio3"]))
 
 
@@ -87,8 +87,7 @@ try:
             print("Program Interrupted!")
             sys.exit(0)
         
-        else:
-            print("Done..")
+       
             
 
        

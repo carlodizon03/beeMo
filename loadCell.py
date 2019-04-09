@@ -17,10 +17,12 @@ class Create:
              GPIO.setmode(GPIO.BCM)
              self.__hx711 = HX711(self.__dout_pin, self.__sck_pin )
              __err = self.__hx711.zero()
+             reading = self.__hx711.get_raw_data_mean()
+             self.__hx711.set_scale_ratio(self.__ratio) 
              if __err:
                 raise ValueError('Tare is unsuccessful.')
             #__ratio = 190.4
-             self.__hx711.set_scale_ratio(self.__ratio) 
+             
            
         
     def Calibrate(self):
