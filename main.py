@@ -1,4 +1,4 @@
-import DHT
+import DHT 
 import loadCell
 import time
 import RPi.GPIO as GPIO
