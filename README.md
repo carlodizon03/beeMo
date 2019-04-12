@@ -3,11 +3,11 @@
 ## LOAD CELL CALIBRATION
 
 1) You need a laptop with VNC installed or a monitor and mouse
-3) Open a folder.
-4) Go to /home/pi/BeeHiveMonitoring folder
-5) Open loadCellCalibration.py
-6) Press F5 to Run the script.
-7) A python shell will appear and just follow the steps that will be provided. 
+2) Open a folder.
+3) Go to /home/pi/BeeHiveMonitoring folder
+4) Open loadCellCalibration.py
+5) Press F5 to Run the script.
+6) A python shell will appear and just follow the steps that will be provided. 
 
 ## WIFI configuration
 
@@ -55,9 +55,12 @@
 
 ## To Create an Autostart
 
-1)Open Terminal
-2)Edit: 
- sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+1) Open Terminal
+
+2) Edit: 
+    sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+    
 3) add 
- sudo python /home/pi/BeeHiveMonitoring/bootStrap.py
+    sudo python /home/pi/BeeHiveMonitoring/bootStrap.py
+    
 4) Reboot and observe
