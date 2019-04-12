@@ -3,11 +3,11 @@
 ## LOAD CELL CALIBRATION
 
 1) You need a laptop with VNC installed or a monitor and mouse
-3) Open a folder.
-4) Go to /home/pi/BeeHiveMonitoring folder
-5) Open loadCellCalibration.py
-6) Press F5 to Run the script.
-7) A python shell will appear and just follow the steps that will be provided. 
+2) Open a folder.
+3) Go to /home/pi/BeeHiveMonitoring folder
+4) Open loadCellCalibration.py
+5) Press F5 to Run the script.
+6) A python shell will appear and just follow the steps that will be provided. 
 
 ## WIFI configuration
 
@@ -53,3 +53,23 @@
 
 * LCD - SCL:GPIO3, SDA:GPIO2
 
+## To Create an Autostart
+
+1) Open Terminal
+
+2) Edit: 
+    sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+    
+3) add 
+    sudo python /home/pi/BeeHiveMonitoring/bootStrap.py
+    
+4) Reboot and observe
+
+## Fixed: ImportError:No Module named Adafruit_DHT
+
+* Caused: in bootStrap.py, the main.py is run using python3 which caused the error because the Adafruit_DHT module was installed only in pyhon.
+* Fix: 
+ 1) Go to cloned package folder.
+ 2) Install the package using:
+      sudo python3 setup.py install
+ 3) Test
