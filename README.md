@@ -64,3 +64,12 @@
     sudo python /home/pi/BeeHiveMonitoring/bootStrap.py
     
 4) Reboot and observe
+
+## Fixed: ImportError:No Module named Adafruit_DHT
+
+* Caused: in bootStrap.py, the main.py is run using python3 which caused the error because the Adafruit_DHT module was installed only in pyhon.
+* Fix: 
+ 1) Go to cloned package folder.
+ 2) Install the package using:
+      sudo python3 setup.py install
+ 3) Test
