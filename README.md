@@ -53,3 +53,11 @@
 
 * LCD - SCL:GPIO3, SDA:GPIO2
 
+## To Create an Autostart
+
+1)Open Terminal
+2)Edit: 
+ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+3) add 
+ sudo python /home/pi/BeeHiveMonitoring/bootStrap.py
+4) Reboot and observe
