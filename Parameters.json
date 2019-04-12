@@ -1,17 +1,15 @@
-  {
-
-    "Parameters" : {
-        
-        "Max_Temp": 60,
-        "Max_Temp2": 50,
-        "Min_Temp": 5,
-        "Min_Temp2": 5,
-        "Max_Humid": 60,
-        "Max_Humid2": 60,
-        "Min_Humid": 5,
-        "Min_Humid2": 5,
-        "Harvest_Weight": 10,
-        
-    }
-      
- }
+{
+  "Parameters": {
+    "Harvest_Weight": 1,
+    "Max_Humid": 63,
+    "Max_Humid2": 60,
+    "Max_Temp": 39,
+    "Max_Temp2": 38,
+    "Min_Humid": 50.3,
+    "Min_Humid2": 51,
+    "Min_Temp": 14.6,
+    "Min_Temp2": 15,
+    "Notif_Status": true,
+    "Time_Span": 5
+  }
+}
