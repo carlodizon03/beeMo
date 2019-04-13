@@ -69,10 +69,13 @@ class Create:
             return __ratio
     def Measure(self):
      
-            __value = self.__hx711.get_weight_mean(20)
-            #if __value < 0:
-            #    __value = 0
-            return __value/1000
+            __value = self.__hx711.get_weight_mean(50)
+            if __value < 0:
+                __value = 0
+            else:
+                __value = __value/1000
+                
+            return __value
          
        
 
