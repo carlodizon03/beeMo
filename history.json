@@ -2519,6 +2519,926 @@
                 "Temperature": 0
             },
             "Timestamp": "2019-04-13 08:36:32.546970"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    61.0,
+                    67.80000305175781
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.599998474121094
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    66.5,
+                    60.099998474121094
+                ],
+                "Temperatures": [
+                    32.79999923706055,
+                    33.099998474121094
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    66.0,
+                    56.20000076293945
+                ],
+                "Temperatures": [
+                    33.20000076293945,
+                    33.099998474121094
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:25:52.059880"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    59.5,
+                    65.4000015258789
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.599998474121094
+                ],
+                "Weight": 122.0700713094689
+            },
+            "Hive_2": {
+                "Humidities": [
+                    66.30000305175781,
+                    58.900001525878906
+                ],
+                "Temperatures": [
+                    32.79999923706055,
+                    33.099998474121094
+                ],
+                "Weight": 0.32826681072835895
+            },
+            "Hive_3": {
+                "Humidities": [
+                    64.30000305175781,
+                    54.70000076293945
+                ],
+                "Temperatures": [
+                    33.20000076293945,
+                    33.099998474121094
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:27:06.041906"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    59.900001525878906,
+                    65.19999694824219
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.599998474121094
+                ],
+                "Weight": 14.75133217440664
+            },
+            "Hive_2": {
+                "Humidities": [
+                    66.69999694824219,
+                    59.29999923706055
+                ],
+                "Temperatures": [
+                    32.79999923706055,
+                    33.099998474121094
+                ],
+                "Weight": 0.33747616626414134
+            },
+            "Hive_3": {
+                "Humidities": [
+                    64.5,
+                    55.20000076293945
+                ],
+                "Temperatures": [
+                    33.20000076293945,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:28:23.574096"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    59.5,
+                    65.5999984741211
+                ],
+                "Temperatures": [
+                    33.400001525878906,
+                    33.79999923706055
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    66.0,
+                    59.400001525878906
+                ],
+                "Temperatures": [
+                    32.900001525878906,
+                    33.20000076293945
+                ],
+                "Weight": 0.32332846065844667
+            },
+            "Hive_3": {
+                "Humidities": [
+                    64.9000015258789,
+                    54.70000076293945
+                ],
+                "Temperatures": [
+                    33.20000076293945,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:29:37.548375"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    59.099998474121094,
+                    65.30000305175781
+                ],
+                "Temperatures": [
+                    33.400001525878906,
+                    33.79999923706055
+                ],
+                "Weight": 0.22648738780288785
+            },
+            "Hive_2": {
+                "Humidities": [
+                    66.5999984741211,
+                    59.0
+                ],
+                "Temperatures": [
+                    32.900001525878906,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    64.5,
+                    54.79999923706055
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:30:51.773232"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    59.0,
+                    64.5
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.70000076293945
+                ],
+                "Weight": 0.17269663319970197
+            },
+            "Hive_2": {
+                "Humidities": [
+                    65.5999984741211,
+                    58.599998474121094
+                ],
+                "Temperatures": [
+                    32.900001525878906,
+                    33.099998474121094
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    64.0,
+                    54.29999923706055
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:32:23.834236"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.400001525878906,
+                    64.4000015258789
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.70000076293945
+                ],
+                "Weight": 0.29376308227196934
+            },
+            "Hive_2": {
+                "Humidities": [
+                    65.19999694824219,
+                    58.599998474121094
+                ],
+                "Temperatures": [
+                    33.0,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    63.70000076293945,
+                    53.70000076293945
+                ],
+                "Temperatures": [
+                    33.20000076293945,
+                    33.5
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:33:37.721000"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.20000076293945,
+                    63.79999923706055
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.5
+                ],
+                "Weight": 0.2895909461808635
+            },
+            "Hive_2": {
+                "Humidities": [
+                    63.79999923706055,
+                    57.70000076293945
+                ],
+                "Temperatures": [
+                    33.0,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    63.099998474121094,
+                    53.099998474121094
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.400001525878906
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:34:58.797313"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.29999923706055,
+                    63.900001525878906
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.400001525878906
+                ],
+                "Weight": 4.256398339660127
+            },
+            "Hive_2": {
+                "Humidities": [
+                    63.599998474121094,
+                    57.70000076293945
+                ],
+                "Temperatures": [
+                    32.900001525878906,
+                    33.20000076293945
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    62.70000076293945,
+                    53.0
+                ],
+                "Temperatures": [
+                    33.29999923706055,
+                    33.29999923706055
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:36:13.936519"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.8,
+                    64.8
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.6
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    64.6,
+                    58.3
+                ],
+                "Temperatures": [
+                    33.1,
+                    33.2
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    63.5,
+                    53.6
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.5
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:39:54.552324"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.7,
+                    63.8
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.8
+                ],
+                "Weight": 0.23
+            },
+            "Hive_2": {
+                "Humidities": [
+                    64.3,
+                    58.1
+                ],
+                "Temperatures": [
+                    33.1,
+                    33.2
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    63.4,
+                    53.6
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.5
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:44:08.617599"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.1,
+                    63.4
+                ],
+                "Temperatures": [
+                    33.4,
+                    33.8
+                ],
+                "Weight": 0.51
+            },
+            "Hive_2": {
+                "Humidities": [
+                    64.4,
+                    58.1
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.3
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    3308.5,
+                    53.3
+                ],
+                "Temperatures": [
+                    16.7,
+                    33.6
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:45:22.908409"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    58.1,
+                    59.9
+                ],
+                "Temperatures": [
+                    33.4,
+                    33.9
+                ],
+                "Weight": 0.75
+            },
+            "Hive_2": {
+                "Humidities": [
+                    63.3,
+                    57.8
+                ],
+                "Temperatures": [
+                    33.2,
+                    33.3
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    62.8,
+                    53.2
+                ],
+                "Temperatures": [
+                    33.4,
+                    33.6
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:50:11.395756"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    56.5,
+                    61.9
+                ],
+                "Temperatures": [
+                    33.6,
+                    33.9
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    61.8,
+                    56.5
+                ],
+                "Temperatures": [
+                    33.3,
+                    33.4
+                ],
+                "Weight": 0.23
+            },
+            "Hive_3": {
+                "Humidities": [
+                    61.6,
+                    52.4
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.6
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:53:27.793274"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    57.0,
+                    59.3
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.1
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    60.3,
+                    56.1
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.5
+                ],
+                "Weight": 0.22
+            },
+            "Hive_3": {
+                "Humidities": [
+                    60.9,
+                    51.4
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.8
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:54:41.888517"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    56.7,
+                    60.0
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.1
+                ],
+                "Weight": 25.85
+            },
+            "Hive_2": {
+                "Humidities": [
+                    60.9,
+                    56.5
+                ],
+                "Temperatures": [
+                    33.4,
+                    33.5
+                ],
+                "Weight": 0.95
+            },
+            "Hive_3": {
+                "Humidities": [
+                    61.3,
+                    51.9
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.8
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:55:55.795457"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    56.0,
+                    59.6
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.1
+                ],
+                "Weight": 3.11
+            },
+            "Hive_2": {
+                "Humidities": [
+                    60.5,
+                    56.3
+                ],
+                "Temperatures": [
+                    33.4,
+                    33.5
+                ],
+                "Weight": 0.95
+            },
+            "Hive_3": {
+                "Humidities": [
+                    61.1,
+                    51.6
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.8
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 10:57:09.707088"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    56.0,
+                    58.9
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.1
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    59.7,
+                    55.7
+                ],
+                "Temperatures": [
+                    33.5,
+                    33.5
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    60.0,
+                    51.1
+                ],
+                "Temperatures": [
+                    33.6,
+                    33.8
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:00:21.051659"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    55.5,
+                    58.4
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.2
+                ],
+                "Weight": 6.12
+            },
+            "Hive_2": {
+                "Humidities": [
+                    59.4,
+                    55.5
+                ],
+                "Temperatures": [
+                    33.6,
+                    33.5
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    59.9,
+                    50.7
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.0
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:01:32.072588"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    55.9,
+                    58.4
+                ],
+                "Temperatures": [
+                    33.8,
+                    34.4
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    59.4,
+                    55.6
+                ],
+                "Temperatures": [
+                    33.8,
+                    33.7
+                ],
+                "Weight": 0.33
+            },
+            "Hive_3": {
+                "Humidities": [
+                    60.2,
+                    50.9
+                ],
+                "Temperatures": [
+                    33.7,
+                    34.1
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:09:13.639215"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    54.1,
+                    57.2
+                ],
+                "Temperatures": [
+                    33.9,
+                    34.3
+                ],
+                "Weight": 35.56
+            },
+            "Hive_2": {
+                "Humidities": [
+                    58.0,
+                    54.4
+                ],
+                "Temperatures": [
+                    33.7,
+                    33.7
+                ],
+                "Weight": 0.34
+            },
+            "Hive_3": {
+                "Humidities": [
+                    59.0,
+                    49.9
+                ],
+                "Temperatures": [
+                    33.6,
+                    34.1
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:10:27.839376"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    54.2,
+                    56.2
+                ],
+                "Temperatures": [
+                    33.9,
+                    34.3
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    57.2,
+                    53.6
+                ],
+                "Temperatures": [
+                    33.7,
+                    33.7
+                ],
+                "Weight": 0.74
+            },
+            "Hive_3": {
+                "Humidities": [
+                    58.3,
+                    49.2
+                ],
+                "Temperatures": [
+                    33.8,
+                    34.0
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:11:44.033174"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    53.8,
+                    56.6
+                ],
+                "Temperatures": [
+                    33.9,
+                    34.3
+                ],
+                "Weight": 0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    57.5,
+                    53.9
+                ],
+                "Temperatures": [
+                    33.7,
+                    33.7
+                ],
+                "Weight": 0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    58.5,
+                    49.6
+                ],
+                "Temperatures": [
+                    33.7,
+                    34.1
+                ],
+                "Weight": 0
+            },
+            "Outside": {
+                "Humidity": 0,
+                "Temperature": 0
+            },
+            "Timestamp": "2019-04-13 11:13:00.128235"
         }
     ]
 }

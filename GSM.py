@@ -34,6 +34,7 @@ def sendSMS(message):
         reply = ser.read(ser.inWaiting())
         #print(reply)
         ser.write(str.encode('\x1A'))
+        time.sleep(5)
 
 def receiveSMS():
     reply = ser.read(ser.inWaiting())

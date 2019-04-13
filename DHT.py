@@ -16,8 +16,8 @@ class DHT_SENSOR:
              __humidity, __temperature = DHT.read_retry(DHT.DHT22, sensor, 15, 3)
 
              if __humidity is not None and __temperature is not None:
-                 __temperatures.append(__temperature)
-                 __humidities.append(__humidity)
+                 __temperatures.append(round(__temperature,2))
+                 __humidities.append(round(__humidity,2))
              else:
                  __temperatures.append(0)
                  __humidities.append(0)

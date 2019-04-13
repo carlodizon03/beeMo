@@ -46,8 +46,9 @@ def scheduler():
         schedule.every(interval).days.at("08:00").do(Hive_weight_reporting)
     else:
         schedule.every().day.at("08:00").do(Hive_weight_reporting)
-    schedule.every(2).hours.do(healthCheck)
-    schedule.every(1).seconds.do(reportLog)
+    schedule.every(1).hours.do(healthCheck)
+    #schedule.every(5).seconds.do(healthCheck)
+    schedule.every(5).seconds.do(reportLog)
     schedule.every().day.at("08:00").do(reportHistory)
     print()
     print(schedule.jobs)

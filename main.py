@@ -4,8 +4,11 @@ import time
 import RPi.GPIO as GPIO
 from datetime import datetime
 import json
+import GSM as gsm
 from pprint import pprint
 import sys
+gsm.sendSMS("Starting..")
+time.sleep(2)
 dht_sensors = [4,17,27,22,10,9,11]
 
 dht = DHT.DHT_SENSOR(dht_sensors)
@@ -49,20 +52,20 @@ try:
             data['Hive_1']['Temperatures'][1] = temp[1]
             data['Hive_1']['Humidities'][0] = humid[0]
             data['Hive_1']['Humidities'][1] = humid[1]
-            data['Hive_1']['Weight'] = weight[0]
+            data['Hive_1']['Weight'] = round(weight[0],2)
             
             
             data['Hive_2']['Temperatures'][0] = temp[2]
             data['Hive_2']['Temperatures'][1] = temp[3]
             data['Hive_2']['Humidities'][0] = humid[2]
             data['Hive_2']['Humidities'][1] = humid[3]
-            data['Hive_2']['Weight'] = weight[1]
+            data['Hive_2']['Weight'] = round(weight[1],2)
 
             data['Hive_3']['Temperatures'][0] = temp[4]
             data['Hive_3']['Temperatures'][1] = temp[5]
             data['Hive_3']['Humidities'][0] = humid[4]
             data['Hive_3']['Humidities'][1] = humid[5]
-            data['Hive_3']['Weight'] = weight[2]
+            data['Hive_3']['Weight'] = round(weight[2],2)
 
             data['Outside']['Temperature'] = temp[6]
             data['Outside']['Humidity'] = humid[6]
