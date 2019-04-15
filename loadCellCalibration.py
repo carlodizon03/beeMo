@@ -1,40 +1,69 @@
-import loadCell
-import RPi.GPIO as GPIO
-import json
+import pickle 
+import os 
+import RPi.GPIO as GPIO 
+from hx711 import HX711 
 
-cell1 = loadCell.Create(23,24,None)
-cell2 = loadCell.Create(8,25,None)
-cell3 = loadCell.Create(1,7,None)
-try:
-    with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json') as f:
-                    data = json.load(f)
-    print("Current Ratios:")            
-    print("Cell1:{0}".format(data["Ratio1"]))
-    print("Cell2:{0}".format(data["Ratio2"]))
-    print("Cell3:{0}".format(data["Ratio3"]))
-    print()
-    print("Starting Calibration for Cell 1...")
-    data["Ratio1"] = cell1.Calibrate()
+ #pins
+dt = 8
+sck = 25
+ 
+try: 
+    GPIO.setmode(GPIO.BCM) 
+    hx = HX711(dout_pin=dt, pd_sck_pin=sck) 
+ 
 
-    print("Starting Calibration for Cell 2...")
-    data["Ratio2"] = cell2.Calibrate()
-
-    print("Starting Calibration for Cell 3...")
-    data["Ratio3"] = cell3.Calibrate()
-
-    with open('/home/pi/BeeHiveMonitoring/LoadCell_Calibration_Ratio.json','w') as outfile:
-                    json.dump(data,outfile,indent=4,sort_keys=True)
+    #assuming there is no swapFile proceed to calibration 
+    #file name
+    swap_file_name = 'cell2.swp'
+    err = hx.zero() 
+    if err: 
+        raise ValueError('Tare is unsuccessful.') 
+    reading = hx.get_raw_data_mean() 
 
 
-    print("Calibration values are successfuly saved to LoadCell_Calibration_Ratio.txt .")
-    print("Now, I will read data in infinite loop. To exit press 'CTRL + C'")
-    input('Press Enter to begin reading')
+    if reading: 
+        print('Data subtracted by offset but still not converted to units:', 
+                  reading) 
+    else: 
+        print('invalid data', reading) 
 
-    while True:
-        #print(cell3.Measure())
-        print("cell1:{0}\t cell2:{1}\t cell3: {2}".format(cell1.Measure(),cell2.Measure(),cell3.Measure()))
 
-except (KeyboardInterrupt, SystemExit):
-    print('Bye :)')
-finally:
+    input('Put known weight on the scale and then press Enter') 
+    reading = hx.get_data_mean() 
+
+    if reading: 
+        print('Mean value from HX711 subtracted by offset:', reading) 
+        known_weight_grams = input('Write how many grams it was and press Enter: ') 
+        try: 
+            value = float(known_weight_grams) 
+            print(value, 'grams') 
+        except ValueError: 
+            print('Expected integer or float and I have got:', 
+                      known_weight_grams) 
+        ratio = reading / value 
+        hx.set_scale_ratio(ratio) 
+        print('Ratio is set.') 
+
+    else: 
+        raise ValueError( 
+                'Cannot calculate mean value. Try debug mode. Variable reading:', 
+                reading) 
+
+
+    print('Saving the HX711 state to swap file on persistant memory')
+    with open(swap_file_name, 'wb') as swap_file: 
+            pickle.dump(hx, swap_file) 
+            swap_file.flush() 
+            os.fsync(swap_file.fileno())
+
+            
+    print("Now, I will read data in infinite loop. To exit press 'CTRL + C'") 
+    input('Press Enter to begin reading') 
+    while True: 
+        print(hx.get_weight_mean(50), 'g') 
+ 
+except (KeyboardInterrupt, SystemExit): 
+    print('Bye :)') 
+ 
+finally: 
     GPIO.cleanup()

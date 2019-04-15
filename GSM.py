@@ -11,10 +11,9 @@ ser = serial.Serial(
 def sendSMS(message):
     with open('/home/pi/BeeHiveMonitoring/Numbers.json','r') as n:
         numbers = json.load(n)
-        print("Sending message to:")
-        for number in numbers["Numbers"]:
-            print(number)
+        
     for number in numbers["Numbers"]:
+        print("Sending message to:{0}".format(number))
         ser.write(str.encode('AT'+'\r\n'))
         time.sleep(1)
         reply = ser.read(ser.inWaiting())
@@ -53,6 +52,10 @@ def receiveSMS():
         time.sleep(.500)
         ser.read(ser.inWaiting())
         time.sleep(.500)
-        
-
-
+"""
+while True:
+    
+    ser.write(str.encode('AT'+'\r\n'))
+    time.sleep(1)
+    reply = ser.read(ser.inWaiting())
+    print(reply)"""
