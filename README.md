@@ -45,9 +45,9 @@
 * DHT Hive 3 Layer 2  -  GPIO 9
 * DHT Outsude   -  GPIO 11
 
-* Load Cell Hive 1 - Dout:24, Sck:23
+* Load Cell Hive 1 - Dout:23, Sck:24
 * Load Cell Hive 2 - Dout:8, Sck:25
-* Load Cell Hive 3 - Dout:6, Sck:5 
+* Load Cell Hive 3 - Dout:1, Sck:7 
 
 * GSM - RX:GPIO14, TX:GPIO15
 
