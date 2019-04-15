@@ -17519,6 +17519,86 @@
                 "Temperature": 25.0
             },
             "Timestamp": "2019-04-16 00:11:05.935908"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    92.1,
+                    0
+                ],
+                "Temperatures": [
+                    26.2,
+                    0
+                ],
+                "Weight": 1.0
+            },
+            "Hive_2": {
+                "Humidities": [
+                    92.7,
+                    99.9
+                ],
+                "Temperatures": [
+                    25.2,
+                    25.5
+                ],
+                "Weight": 0.0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    91.3,
+                    0
+                ],
+                "Temperatures": [
+                    25.1,
+                    0
+                ],
+                "Weight": 0.0
+            },
+            "Outside": {
+                "Humidity": 92.5,
+                "Temperature": 25.5
+            },
+            "Timestamp": "2019-04-16 00:17:05.116222"
+        },
+        {
+            "Hive_1": {
+                "Humidities": [
+                    93.8,
+                    0
+                ],
+                "Temperatures": [
+                    25.6,
+                    0
+                ],
+                "Weight": 1.04
+            },
+            "Hive_2": {
+                "Humidities": [
+                    92.7,
+                    99.9
+                ],
+                "Temperatures": [
+                    25.2,
+                    25.5
+                ],
+                "Weight": 0.0
+            },
+            "Hive_3": {
+                "Humidities": [
+                    91.2,
+                    83.5
+                ],
+                "Temperatures": [
+                    25.1,
+                    25.5
+                ],
+                "Weight": 0.0
+            },
+            "Outside": {
+                "Humidity": 92.4,
+                "Temperature": 25.3
+            },
+            "Timestamp": "2019-04-16 00:18:57.341654"
         }
     ]
 }
