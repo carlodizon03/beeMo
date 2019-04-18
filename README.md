@@ -53,7 +53,7 @@
   * dt - orange - yellow 
   * gnd - tOrange - green
  
-* Load Cell Hive 3 - Dout:1, Sck:7 
+* Load Cell Hive 3 - Dout:16, Sck:20 
   * vcc - tBlue -red
   * sck - blue - green
   * dt -  brown - yellow
