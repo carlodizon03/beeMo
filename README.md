@@ -46,8 +46,18 @@
 * DHT Outsude   -  GPIO 11
 
 * Load Cell Hive 1 - Dout:23, Sck:24
+
 * Load Cell Hive 2 - Dout:8, Sck:25
-* Load Cell Hive 3 - Dout:1, Sck:7 
+  * vcc - tgreen - red 
+  * sck - tblue   - blue
+  * dt - orange - yellow 
+  * gnd - tOrange - green
+ 
+* Load Cell Hive 3 - Dout:16, Sck:20 
+  * vcc - tBlue -red
+  * sck - blue - green
+  * dt -  brown - yellow
+  * gnd - tBrown - black 
 
 * GSM - RX:GPIO14, TX:GPIO15
 
