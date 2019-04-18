@@ -22,8 +22,8 @@ cell1_sck = 24
 cell2_dt = 8 
 cell2_sck = 25
 
-cell3_dt = 0 
-cell3_sck = 5 
+cell3_dt = 16 
+cell3_sck = 20 
 
 cell1Swap = 'cell1.swp'
 cell2Swap = 'cell2.swp'
