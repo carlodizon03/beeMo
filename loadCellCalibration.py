@@ -4,8 +4,9 @@ import RPi.GPIO as GPIO
 from hx711 import HX711 
 
  #pins
-dt = 8
-sck = 25
+dt = 16
+sck = 20
+
  
 try: 
     GPIO.setmode(GPIO.BCM) 
@@ -14,22 +15,22 @@ try:
 
     #assuming there is no swapFile proceed to calibration 
     #file name
-    swap_file_name = 'cell2.swp'
+
+    swap_file_name = 'cell3.swp'
     err = hx.zero() 
     if err: 
         raise ValueError('Tare is unsuccessful.') 
     reading = hx.get_raw_data_mean() 
 
 
-    if reading: 
-        print('Data subtracted by offset but still not converted to units:', 
-                  reading) 
+    if reading:
+        print('Data subtracted by offset but still not converted to units:',reading) 
     else: 
         print('invalid data', reading) 
 
 
     input('Put known weight on the scale and then press Enter') 
-    reading = hx.get_data_mean() 
+    reading = hx.get_data_mean(readings = 50) 
 
     if reading: 
         print('Mean value from HX711 subtracted by offset:', reading) 

@@ -1,10 +1,10 @@
 {
     "Parameters": {
-        "Harvest_Weight": 1.5,
+        "Harvest_Weight": 1.0,
         "Max_Humid": 60.0,
         "Max_Humid2": 60.0,
-        "Max_Temp": 30.0,
-        "Max_Temp2": 29.0,
+        "Max_Temp": 28.0,
+        "Max_Temp2": 31.0,
         "Min_Humid": 10.0,
         "Min_Humid2": 10.0,
         "Min_Temp": 14.6,

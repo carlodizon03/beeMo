@@ -9,20 +9,24 @@ def startProgram(i):
        print("Running LCDPrinter")
        os.system("sudo python3 /home/pi/BeeHiveMonitoring/LCDPrinter.py")
 
-    if(i==1):
+    elif(i==1):
         time.sleep(1)
         print("Running main")
         os.system("sudo python3 /home/pi/BeeHiveMonitoring/main.py")
-    if(i==2):
+    elif(i==2):
         time.sleep(1)
         print("Running reportingModule")
         os.system("sudo python3 /home/pi/BeeHiveMonitoring/reportingModule.py")
+    elif(i==3):
+        time.sleep(1)
+        print("Rinning Weighing Scale")
+        os.system("sudo python3 /home/pi/BeeHiveMonitoring/weightInjector.py")
     else:
         pass
 
-for i in range (2):
-    t = threading.Thread(target=startProgram, args=(i,))
-    t.start()
+#for i in range (4):
+ #   t = threading.Thread(target=startProgram, args=(i,))
+ #   t.start()
 
  
     
