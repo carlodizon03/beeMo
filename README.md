@@ -38,13 +38,13 @@
 ## Pin COnfiguration
 
 
-* DHT Hive 1 Layer 1  -  GPIO 4
-* DHT Hive 1 Layer 2  -  GPIO 17
-* DHT Hive 2 Layer 1  -  GPIO 27
-* DHT Hive 2 Layer 2  -  GPIO 22
-* DHT Hive 3 Layer 1  -  GPIO 10
-* DHT Hive 3 Layer 2  -  GPIO 9
-* DHT Outsude   -  GPIO 11
+* DHT Hive 1 Layer 1  -  GPIO 11
+* DHT Hive 1 Layer 2  -  GPIO 19
+* DHT Hive 2 Layer 1  -  GPIO 10
+* DHT Hive 2 Layer 2  -  GPIO 12
+* DHT Hive 3 Layer 1  -  GPIO 27
+* DHT Hive 3 Layer 2  -  GPIO 26
+* DHT Outsude   -  GPIO 4
 
 * Load Cell Hive 1 - Dout:23, Sck:24
   * vcc - tblue -
