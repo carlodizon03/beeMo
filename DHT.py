@@ -1,3 +1,4 @@
+import time
 import sys
 import Adafruit_DHT as DHT
 
@@ -21,6 +22,7 @@ class DHT_SENSOR:
              else:
                  __temperatures.append(0)
                  __humidities.append(0)
+             time.sleep(1)
 
         return __temperatures,__humidities    
                 

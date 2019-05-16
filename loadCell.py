@@ -26,13 +26,13 @@ class Create:
     
             
     def Measure(self):
-        self.__hx711.power_up() 
-        self.__hx711.reset()     
+       # self.__hx711.power_up() 
+        #self.__hx711.reset()     
         __value = self.__hx711.get_weight_mean(readings = 50)
 
         if __value < 0:
             __value = 0
-        self.__hx711.power_down()    
+        #self.__hx711.power_down()    
         return  (__value/1000)
          
        

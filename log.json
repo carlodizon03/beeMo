@@ -1,40 +1,40 @@
 {
     "Hive_1": {
         "Humidities": [
-            63.0,
-            84.4
+            77.0,
+            74.0
         ],
         "Temperatures": [
-            30.3,
-            30.7
+            34.0,
+            35.0
         ],
-        "Weight": 1.23
+        "Weight": 4.11
     },
     "Hive_2": {
         "Humidities": [
-            66.4,
-            94.6
+            50.5,
+            93.9
         ],
         "Temperatures": [
-            30.6,
-            30.8
+            32.6,
+            33.3
         ],
-        "Weight": 2.2
+        "Weight": 5.31
     },
     "Hive_3": {
         "Humidities": [
-            76.8,
-            0
+            40.4,
+            69.1
         ],
         "Temperatures": [
-            30.8,
-            0
+            32.7,
+            33.8
         ],
-        "Weight": 3.56
+        "Weight": 5.63
     },
     "Outside": {
-        "Humidity": 78.2,
-        "Temperature": 30.7
+        "Humidity": 48.8,
+        "Temperature": 33.1
     },
-    "Timestamp": "2019-04-17 22:31:22.162315"
+    "Timestamp": "2019-04-23 16:20:16.748964"
 }

@@ -7,11 +7,11 @@ ser = serial.Serial(
     baudrate = 9600,
     timeout = 1
     )
-#ser.write(str.encode("AT+CMGF=1\r")) # set to text mode
-#time.sleep(1)
-#print()
-#ser.write(str.encode('AT+CMGDA="DEL ALL"\r\n')) # delete all SMS
-#time.sleep(1)
+ser.write(str.encode("AT+CMGF=1\r")) # set to text mode
+time.sleep(1)
+print()
+ser.write(str.encode('AT+CMGDA="DEL ALL"\r\n')) # delete all SMS
+time.sleep(1)
 
 def sendSMS(message):
     with open('/home/pi/BeeHiveMonitoring/Numbers.json','r') as n:
@@ -64,19 +64,20 @@ def injectSMS():
             print(values)
             for i in weights:
                 print(i)
-            with open('/home/pi/BeeHiveMonitoring/log.json') as f:
-                data = json.load(f)
-                data['Hive_1']['Weight'] = float(weights[0])
-                data['Hive_2']['Weight'] = float(weights[1])
-                data['Hive_3']['Weight'] = float(weights[2])
-            print("updating values in log.json..")
-            with open('/home/pi/BeeHiveMonitoring/log.json','w') as outfile:
-                  json.dump(data,outfile,indent=4,sort_keys=True)
-                  
+            with open('/home/pi/BeeHiveMonitoring/InitialWeights.json') as f:
+                initiWeights = json.load(f)
+            initiWeights['Initial_Weights']['Hive1'] = float(weights[0])
+            initiWeights['Initial_Weights']['Hive2'] = float(weights[1])
+            initiWeights['Initial_Weights']['Hive3'] = float(weights[2])
+            print("updating values in InitialWeights.json..")
+            with open('/home/pi/BeeHiveMonitoring/InitialWeights.json','w') as outfile:
+                  json.dump(initiWeights,outfile,indent=4,sort_keys=True)
+            sendSMS("Initial weights are successfully set to:\nHive1: {0:.2f}kg\nHive2: {1:0.2f}kg\nHive3: {2:0.2f}kg\n".format(float(weights[0]),float(weights[1]),float(weights[2])))     
         ser.write(str.encode('AT+CMGDA="DEL ALL"'+'\r\n'))
         time.sleep(.500)
         ser.read(ser.inWaiting())
         time.sleep(.500)
-
+       
+    
  
 

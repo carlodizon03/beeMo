@@ -19,14 +19,15 @@ topic = {
         }
 
 broker = {
-        "eclipse":"iot.eclipse.org",
+        "eclipse":"broker.hivemq.com",
         "mosquitto":"test.mosquitto.org"
         }
 directory = {
             "log":'/home/pi/BeeHiveMonitoring/log.json',
             "history":'/home/pi/BeeHiveMonitoring/history.json',
             "parameters":'/home/pi/BeeHiveMonitoring/Parameters.json',
-            "numbers":'/home/pi/BeeHiveMonitoring/Numbers.json'
+            "numbers":'/home/pi/BeeHiveMonitoring/Numbers.json',
+            "initialWeights":'/home/pi/BeeHiveMonitoring/InitialWeights.json'
             }
 
    
@@ -47,7 +48,7 @@ def scheduler():
     else:
         schedule.every().day.at("08:00").do(Hive_weight_reporting)
     schedule.every(10).minutes.do(healthCheck)
-    #schedule.every(5).seconds.do(healthCheck)
+    #schedule.every(60).seconds.do(Hive_weight_reporting)
     schedule.every(5).seconds.do(reportLog)
     schedule.every().day.at("08:00").do(reportHistory)
     print()
@@ -158,6 +159,7 @@ def healthCheck():
     print("Health Check")
     print("--------------")
     directory["parameters"]
+    
     with open(directory["parameters"],'r') as f:
         params = json.load(f)
         
@@ -287,14 +289,44 @@ def healthCheck():
             
     
 def Hive_weight_reporting():
+    
+   
+    
+
     with open(directory["history"],'r') as f:
         history = json.load(f)
     hive1_weight = history['Reports'][-1]['Hive_1']['Weight']
     hive2_weight = history['Reports'][-1]['Hive_2']['Weight']
     hive3_weight = history['Reports'][-1]['Hive_3']['Weight']
 
-    report = "Bee Hive Weight Report: \n Hive 1 ={0:.2f}kg \n Hive 2 ={1:.2f}kg \n Hive 3 ={2:.2f}kg \n Date & Time:{3}".format(hive1_weight,hive2_weight,hive3_weight,datetime.datetime.now())
+    with open(directory["parameters"],'r') as f:
+        params = json.load(f)
+    Harvest_Weight = params['Parameters']['Harvest_Weight']
+    """"Initial_Weight1": 4.01,
+	"Initial_Weight2": 5.13,
+	"Initial_Weight3": 5.81,"""
+    
+    with open(directory["initialWeights"],'r') as f:
+        initiWeights = json.load(f)
+    Initial_Weight1 = initiWeights['Initial_Weights']['Hive1']
+    Initial_Weight2 = initiWeights['Initial_Weights']['Hive2']
+    Initial_Weight3 = initiWeights['Initial_Weights']['Hive3']
+    
+    gain1 = hive1_weight-Initial_Weight1
+    gain2 = hive2_weight-Initial_Weight2
+    gain3 = hive3_weight-Initial_Weight3
+    
+    if( gain1 >= Harvest_Weight):
+        report = "Hive 1 is ready for harvest. Weight gain is {0:0.2f}".format(gain1)
+    if( gain2 >= Harvest_Weight):
+        report = "Hive 2 is ready for harvest. Weight gain is {0:0.2f}".format(gain2)
+    if( gain3 >= Harvest_Weight):
+        report = "Hive 3 is ready for harvest. Weight gain is {0:0.2f}".format(gain3)
+        
+        
+    report = "Bee Hive Weight Report: \n Hive 1 gain ={0:.2f}kg \n Hive 2 gain ={1:.2f}kg \n Hive 3 gain ={2:.2f}kg \n\n Date & Time:{3}".format(gain1,gain2,gain3,datetime.datetime.now())
     client.publish(topic["alerts"],report)
+    
     gsm.sendSMS(report)
 
 scheduler()
