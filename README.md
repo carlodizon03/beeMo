@@ -88,3 +88,10 @@
  2) Install the package using:
       sudo python3 setup.py install
  3) Test
+
+## Switching Serial0 from ttyAMA0 to ttyS0
+
+ 1) sudo nano /boot/config.txt
+ 2) put "enable_uart=1" at the bottom and save
+ 3) reboot rpi
+ 4) To check, run ls -l /dev
