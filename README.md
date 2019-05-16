@@ -95,3 +95,10 @@
  2) put "enable_uart=1" at the bottom and save
  3) reboot rpi
  4) To check, run ls -l /dev
+
+## Enabling i2c
+ 1)sudo apt-get install -y python-smbus
+ 2)sudo apt-get install -y i2c-tools
+ 3)sudo raspi-config
+ 4)enable i2c under interfacing options
+ 5)to check, connect an i2c device and run  "sudo i2cdetect -y 1"
