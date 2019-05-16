@@ -96,6 +96,13 @@
  3) reboot rpi
  4) To check, run ls -l /dev
 
+## To enable Serial port:
+ 1)run sudo raspi-config
+ 2)at interfacing option go to serial:
+ 3)disable console
+ 4)enable serial port
+ 5) reboot
+ 
 ## Enabling i2c
  1)sudo apt-get install -y python-smbus
  2)sudo apt-get install -y i2c-tools
